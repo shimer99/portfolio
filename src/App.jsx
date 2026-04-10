@@ -79,6 +79,41 @@ function Navbar() {
 }
 
 function Hero() {
+  const words = [
+    "Full Stack Developer",
+    "UI/UX Designer",
+    "AI Enthusiast",
+    "Photographer",
+    "Accounting & Finance Student"
+  ];
+
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    if (index === words.length) return;
+
+    if (subIndex === words[index].length + 1 && !isDeleting) {
+      setTimeout(() => setIsDeleting(true), 1200);
+      return;
+    }
+
+    if (subIndex === 0 && isDeleting) {
+      setIsDeleting(false);
+      setIndex((prev) => (prev + 1) % words.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (isDeleting ? -1 : 1));
+      setText(words[index].substring(0, subIndex));
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, isDeleting, words]);
+
   return (
     <section className="hero-glow max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-16 sm:pb-24 min-h-[calc(100vh-80px)] flex items-center">
       <div className="hero-content grid lg:grid-cols-2 gap-10 lg:gap-14 items-center w-full">
@@ -92,9 +127,10 @@ function Hero() {
           </h2>
 
           <p className="mt-5 sm:mt-7 text-base sm:text-lg md:text-xl text-slate-300 leading-7 sm:leading-9 max-w-2xl">
-            I showcase my work in IT, UI/UX, graphic design, accounting, and photography through a modern portfolio focused on creativity, problem solving, and presentation.
+            I am a multidisciplinary creator building user-centered digital solutions
+            through software development, design, AI exploration, photography, and
+            business thinking, with a focus on creativity and problem solving.
           </p>
-
           <div className="mt-8 sm:mt-9 flex flex-wrap gap-3 sm:gap-4">
             <a
               href="#categories"
@@ -128,28 +164,29 @@ function Hero() {
                   IT • Design • Business • Creativity
                 </p>
 
-                <h3 className="text-3xl sm:text-4xl md:text-[2.8rem] font-extrabold leading-[1.15] text-white">
-                  <span className="text-white">Developer</span>
-                  <span className="text-slate-400"> & </span>
-                  <span className="gradient-text">Designer</span>
+                {/* ✅ TYPING EFFECT HERE */}
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-[1.2] text-white">
+                  I am <span className="gradient-text">{text}</span>
+                  <span className="animate-pulse">|</span>
                 </h3>
 
                 <p className="mt-3 text-base sm:text-lg md:text-[1.15rem] font-medium text-slate-300 leading-7">
-                  with a passion for Photography and Accounting
+                  passionate about software, design, creativity, and business thinking
                 </p>
 
                 <p className="text-slate-400 mt-6 text-sm sm:text-base leading-7 max-w-md mx-auto">
-                  Blending technology, design, business thinking, and visual creativity
-                  into a modern and professional personal brand.
+                    Building a personal brand as a multidisciplinary creator in software development,
+                    UI/UX design, artificial intelligence, photography, and business thinking,
+                    focused on designing impactful and modern digital experiences.
                 </p>
 
                 <div className="mt-8 flex justify-center gap-3 flex-wrap sm:flex-nowrap">
                   <span className="px-4 py-2 rounded-full text-sm whitespace-nowrap bg-blue-500/10 text-blue-300 border border-blue-400/20">
                     IT
                   </span>
-                  <span className="px-4 py-2 rounded-full text-sm whitespace-nowrap bg-violet-500/10 text-violet-300 border border-violet-400/20">
+                  {/* <span className="px-4 py-2 rounded-full text-sm whitespace-nowrap bg-violet-500/10 text-violet-300 border border-violet-400/20">
                     UI/UX
-                  </span>
+                  </span> */}
                   <span className="px-4 py-2 rounded-full text-sm whitespace-nowrap bg-emerald-500/10 text-emerald-300 border border-emerald-400/20">
                     Accounting
                   </span>
@@ -164,6 +201,7 @@ function Hero() {
       </div>
     </section>
   );
+
 }
 
 function About() {
@@ -179,10 +217,17 @@ function About() {
       >
         <h3 className="section-title gradient-text">About Me</h3>
         <p className="text-slate-300 leading-7 sm:leading-8 text-base sm:text-lg">
-          I am an IT student with interests in software development, UI/UX design, accounting, and photography. I enjoy building meaningful digital solutions, designing clean user experiences, and presenting my work in a professional and creative way.
+          I am an IT undergraduate and multidisciplinary creator with interests in software
+          development, UI/UX design, artificial intelligence, photography, and business
+          learning. I focus on building meaningful digital solutions, designing clean and
+          intuitive user experiences, and presenting work in a creative and professional way.
         </p>
+
         <p className="text-slate-300 leading-7 sm:leading-8 text-base sm:text-lg mt-4">
-          This portfolio highlights both my technical and creative journey. It includes development projects, Figma designs, visual work, categorized certificates, and selected achievements that represent my growth, versatility, and passion for learning.
+          This portfolio represents my learning journey and growth across both technical and
+          creative fields. It includes development projects, design work, visual content,
+          selected certificates, and achievements that reflect my passion for continuous
+          learning, versatility, and problem-solving.
         </p>
       </motion.div>
     </section>

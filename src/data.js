@@ -263,6 +263,75 @@ export const categories = [
 
 export const certificateCategories = [
   {
+    id: "cert-all",
+    title: "All Certificates",
+    type: "Certificates",
+    coverImage: "/images/certificates/all/it1.png",
+    description:
+      "Certificate Collection",
+    items: [
+      {
+        title: "Google AI",
+        image: "/images/certificates/all/google_ai.png",
+      },
+      {
+        title: "Foundation of Prompt Engineering",
+        image: "/images/certificates/all/it1.png",
+      },
+      {
+        title: "GenAI Powered Data Analytics Job Simulation",
+        image: "/images/certificates/it/TATA.png",
+      },
+      {
+        title: "Basics of Digital Marketing",
+        image: "/images/certificates/all/basics_of_DigiMar.png",
+      },
+       {
+        title: "A Theoretical Origin of Ethics in Business and Tech Industry",
+        image: "/images/certificates/pd/ethics_in_busi.png",
+      },
+      {
+        title: "Master Leadership Styles",
+        image: "/images/certificates/pd/mgt_styles.png",
+      },
+      {
+        title: "Basics of Human Resource Management",
+        image: "/images/certificates/all/basics_of_HRM.png",
+      },
+      {
+        title: "Basics of International Human Resource Management",
+        image: "/images/certificates/all/basics_of_IHRM.png",
+      },
+      {
+        title: "AI for Business Analysis",
+        image: "/images/certificates/it/ai_for busi_ana.png",
+      },
+      {
+        title: "AI for Content Creation",
+        image: "/images/certificates/it/ai4cc.png",
+      },
+      {
+        title: "AI for Research and Design",
+        image: "/images/certificates/it/research and design.png",
+      },
+      {
+        title: "AI for Writing and Communication",
+        image: "/images/certificates/it/writing&com.png",
+         image: "/images/certificates/it/planning.png",
+      },
+      {
+        title: "AI for Brainstorming and Planning",
+        image: "/images/certificates/it/planning.png",
+      },
+      {
+        title: "AI Fundamentals",
+        image: "/images/certificates/it/ai fundamentals.png",
+      },
+      
+    ]
+  },
+
+  {
     id: "cert-it",
     title: "IT & Development Certificates",
     type: "Certificates",
@@ -271,34 +340,60 @@ export const certificateCategories = [
       "Certificates related to programming, development, technology, and technical learning.",
     items: [
       {
-        title: "Foundation of Prompt Engineering",
-        image: "/images/certificates/it/it1.png",
-        file: "/certificates/it/web-development.pdf",
+        title: "GenAI Powered Data Analytics Job Simulation",
+        image: "/images/certificates/it/TATA.png",
       },
       {
-        title: "Programming Fundamentals Certificate",
-        image: "/images/certificates/it/it2.jpg",
-        file: "/certificates/it/programming-fundamentals.pdf",
+        title: "Foundation of Prompt Engineering",
+        image: "/images/certificates/it/it1.png",
       },
+      {
+        title: "Google AI",
+        image: "/images/certificates/it/google_ai.png",
+      },
+      {
+        title: "AI for Business Analysis",
+        image: "/images/certificates/it/ai_for busi_ana.png",
+      },
+      {
+        title: "AI for Content Creation",
+        image: "/images/certificates/it/ai4cc.png",
+      },
+      {
+        title: "AI for Research and Design",
+        image: "/images/certificates/it/research and design.png",
+      },
+      {
+        title: "AI for Writing and Communication",
+        image: "/images/certificates/it/writing&com.png",
+         image: "/images/certificates/it/planning.png",
+      },
+      {
+        title: "AI for Brainstorming and Planning",
+        image: "/images/certificates/it/planning.png",
+      },
+      {
+        title: "AI Fundamentals",
+        image: "/images/certificates/it/ai fundamentals.png",
+      },
+      
     ],
   },
   {
-    id: "cert-uiux",
-    title: "UI/UX Certificates",
+    id: "cert-PD",
+    title: "Professional Development Certificates",
     type: "Certificates",
-    coverImage: "/images/certificates/uiux/uiux-cover.jpg",
+    coverImage: "/images/certificates/pd/ethics_in_busi.png",
     description:
       "Certificates related to Figma, interface design, user experience, and design thinking.",
     items: [
       {
-        title: "UI Design Certificate",
-        image: "/images/certificates/uiux/uiux1.jpg",
-        file: "/certificates/uiux/ui-design.pdf",
+        title: "A Theoretical Origin of Ethics in Business and Tech Industry",
+        image: "/images/certificates/pd/ethics_in_busi.png",
       },
       {
-        title: "UX Fundamentals Certificate",
-        image: "/images/certificates/uiux/uiux2.jpg",
-        file: "/certificates/uiux/ux-fundamentals.pdf",
+        title: "Master Leadership Styles",
+        image: "/images/certificates/pd/mgt_styles.png",
       },
     ],
   },
@@ -347,6 +442,8 @@ export const certificateCategories = [
       },
     ],
   },
+
+  
 ];
 
 export const contactLinks = {
